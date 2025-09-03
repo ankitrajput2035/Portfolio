@@ -30,9 +30,7 @@ const __dirname = path.dirname(__filename);
 // API Routes
 app.use('/', profileRoutes);
 
-app.get('/', (req, res) => {
-  res.send('API is running...');
-});
+
 
 if (process.env.NODE_ENV === "production") {
   // Serve static files from the React app's 'dist' folder
