@@ -11,9 +11,11 @@ connectDB();
 
 const app = express();
 
+const PORT = process.env.PORT ;
+
 // Use CORS - configure for your frontend URL in production
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://portfolio-xa3p.onrender.com",
     credentials: true, // allow frontend to send cookies
   }));
 
@@ -22,6 +24,15 @@ app.use(express.json());
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+
+
+// API Routes
+app.use('/', profileRoutes);
+
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
 
 if (process.env.NODE_ENV === "production") {
   // Serve static files from the React app's 'dist' folder
@@ -33,13 +44,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// API Routes
-app.use('/', profileRoutes);
 
-app.get('/', (req, res) => {
-  res.send('API is running...');
-});
-
-const PORT = process.env.PORT ;
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
