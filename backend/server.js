@@ -22,15 +22,15 @@ app.use(cors({
 app.use(express.json());
 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+
 
 
 
 // API Routes
 app.use('/', profileRoutes);
 
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 if (process.env.NODE_ENV === "production") {
   // Serve static files from the React app's 'dist' folder
