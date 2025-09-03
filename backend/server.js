@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './config/db.js';
 import profileRoutes from './routes/profileRoutes.js';
+import path from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 connectDB();
