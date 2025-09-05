@@ -20,7 +20,7 @@ function App() {
     const fetchProfile = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${API_URL}/profile`);
+        const response = await axios.get(`${API_URL}/api/profile`);
         setProfile(response.data);
       } catch (err) {
         setError('Failed to fetch profile data. Is the backend running?');

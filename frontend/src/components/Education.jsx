@@ -7,7 +7,7 @@ const Education = ({ educationHistory }) => {
     <section>
       <h2>Education</h2>
       <div className="education-list">
-        {educationHistory.map(edu => (
+        {(educationHistory && Array.isArray(educationHistory) ? educationHistory : []).map(edu => (
           <div key={edu.institution} className="card education-card">
             <h3>{edu.EducationLevel}</h3>
             <p className="institution">{edu.institution}</p>

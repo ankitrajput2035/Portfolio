@@ -26,7 +26,6 @@ const getProfile = async (req, res) => {
   }
 };
 
-//review
 const getProjects = async (req, res) => {
   try {
 
@@ -35,12 +34,7 @@ const getProjects = async (req, res) => {
     if (!profile) {
       return res.status(404).json({ message: 'Profile data not found' });
     }
-
-    // // Filter projects array in the application logic
-    // const filteredProjects = profile.projects.filter(project =>
-    //   project.skills.some(skill => skill.toLowerCase() === skillQuery.toLowerCase())
-    // );
-
+    
     res.json(profile.projects);
   } catch (error) {
     console.error(error);
@@ -77,8 +71,6 @@ const getEducation = async (req, res) => {
     if (!profile) {
       return res.status(404).json({ message: 'Profile data not found' });
     }
-
-    // // Filter projects array in the application logic
     // const filteredProjects = profile.projects.filter(project =>
     //   project.skills.some(skill => skill.toLowerCase() === skillQuery.toLowerCase())
     // );
