@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 // Use CORS - configure for your frontend URL in production
 app.use(cors({
     // origin: "https://portfolio-xa3p.onrender.com",
-    origin: "http://localhost:5173",
+    origin: "https://portfolio-frontend-623w.onrender.com",
     credentials: true, // allow frontend to send cookies
   }));
 
